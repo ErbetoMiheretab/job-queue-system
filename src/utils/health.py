@@ -1,6 +1,6 @@
 import redis
 
-from src.config import setttings
+from src.config import settings
 from src.db.session import engine
 
 
@@ -14,7 +14,7 @@ async def health_check():
     #Redis check
 
     try:
-        r = redis.from_url(setttings.REDIS_URL)
+        r = redis.from_url(settings.REDIS_URL)
         r.ping()
         status["redis"] = True
 
